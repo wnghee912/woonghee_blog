@@ -1,0 +1,24 @@
+# Permalinks
+# Use of `relative_permalinks` ensures post links from the index work properly.
+
+# Setup
+title: yngmanie
+tagline: 블로그
+description: 프론트엔드 개발자 박용민입니다.
+url: https://austinpark420.github.io
+baseurl: ""
+paginate: 10
+
+# About/contact
+author:
+  name: 박용민
+  url:
+  email: austin.park420@gmail.com
+
+# Custom vars
+version: 1.0.0
+
+# Archive
+plugins:
+  - jekyll-archives
+# bundle exec jekyll serve

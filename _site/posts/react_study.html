@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      React Study &middot; yngmanie
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- START OF RELEVANT PART -->
+  <script async src="https://just-comments.com/w.js"></script>
+  <!-- END OF RELEVANT PART -->
+
+</head>
+
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <nav class="sidebar-nav">
+    <img
+      src="https://avatars2.githubusercontent.com/u/35208965?s=460&v=4"
+      alt="yngmanie profile image"
+    />
+    <div class="sidebar-item">
+      <p>Front End Dev</p>
+    </div>
+    <a
+      class="sidebar-nav-item"
+      href="/"
+      >Home</a
+    >
+
+                
+    <a
+      class="sidebar-nav-item"
+      href="/archive/"
+      >Archive</a
+    >
+              
+
+    <!-- <a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a> -->
+    <a class="sidebar-nav-item" href="https://github.com/austinpark420"
+      >GitHub</a
+    >
+    <!-- <span class="sidebar-nav-item">Currently v1.0.0</span> -->
+  </nav>
+
+  <!-- <div class="sidebar-item">
+    <p>
+      &copy; 2019. All rights reserved.
+    </p>
+  </div> -->
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h1 class="masthead-title">
+            <a href="/" title="Home">yngmanie</a>
+            <small>블로그</small>
+          </h1>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h2 class="post-title">React Study</h2>
+  <span class="post-date">27 May 2018</span>
+  <h2 id="react">React</h2>
+
+<h3 id="서버사이드-렌더링-지원">서버사이드 렌더링 지원</h3>
+<ul>
+  <li>초기 구동 딜레이 문제점 해결.</li>
+  <li>검색엔진 최적화 (구글은 문제가 없지만 다른 검색엔진에서는 문제가 생길 수 있음)</li>
+</ul>
+
+<h3 id="view-only">view only</h3>
+<ul>
+  <li>view만 담당하기 때문에 다른 기능을 추가하기 위해서는 3rd party tool이 필요하다.</li>
+</ul>
+
+<h3 id="jsx">JSX</h3>
+<ul>
+  <li>XML-like syntax를 native javascript로 변환해주는 것.</li>
+</ul>
+
+<h3 id="props">props</h3>
+<ul>
+  <li>
+    <p>컴포넌트 내부에 변하지 않는 데이터.</p>
+  </li>
+  <li>
+    <p>기본값 설정</p>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">App</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">App</span><span class="p">.</span><span class="nx">defaultProps</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">value</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Type 검증</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">App</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                 <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span>
+                 <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">secondValue</span><span class="p">}</span>
+                 <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">thirdValue</span><span class="p">}</span>
+            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">App</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">value</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
+    <span class="na">secondValue</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropType</span><span class="p">.</span><span class="nx">number</span><span class="p">,</span>
+    <span class="na">thirdValue</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">any</span><span class="p">.</span><span class="nx">isRequired</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<ul>
+  <li>propTypes를 지정하는 것은 필수가 아니고 유지보수를 위해서 사용하는 것이다.</li>
+</ul>
+
+<h3 id="state">state</h3>
+<ul>
+  <li>컴포넌트에서 유동적인 데이터.</li>
+  <li>초기값 필수, 컴포넌트 생성자 method인 constructor에서 하면 된다.</li>
+</ul>
+
+<h3 id="map">map</h3>
+<ul>
+  <li>map을 활용해 props와 state 연습</li>
+</ul>
+
+<iframe height="265" scrolling="no" title="how to " src="//codepen.io/austinpark420/embed/YLmOZz/?height=265&amp;theme-id=0&amp;default-tab=js,result&amp;embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="https://codepen.io/austinpark420/pen/YLmOZz/">how to </a> by YongMin Park (<a href="https://codepen.io/austinpark420">@austinpark420</a>) on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+<h2 id="redux">redux</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* 상태관리를 통합적으로 해주는 library.
+</code></pre></div></div>
+
+<h3 id="provider">Provider</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* 하위 컴포넌트에 redux의 store에 연결해주는 역핡.
+</code></pre></div></div>
+
+<h3 id="connectoptions">connect([…options])</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* 컴포넌트를 redux에 연결하는 함수를 반환한다.
+</code></pre></div></div>
+
+<h2 id="immutablejs">immutable.js</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* JavaScript에서 배열과 객체는 pass by reference이다.
+* 직접적으로 수정한다면, 내부의 값이 수정됐을지라도 레퍼런스가 가르키는곳은 같기 때문에 똑같은 값으로 인식한다.
+* React에서 이를 상태변화로 간주할 수가 없다.
+* 그래서 새 배열이나 객체에 복사를 하는데 이를 편하게 할 수 있게 도와주는 것이 immutable.js이다.
+</code></pre></div></div>
+
+<h3 id="refer-to">refer to</h3>
+<ul>
+  <li><a href="https://www.inflearn.com/course/react-%EA%B0%95%EC%A2%8C-velopert/">React &amp; Express 를 이용한 웹 어플리케이션 개발하기(inflearn)</a></li>
+</ul>
+
+</div>
+
+<!-- START OF RELEVANT PART -->
+<div
+  class="just-comments"
+  data-allowguests="true"
+  data-apikey="74990c3f9164c55222e4e73e0c03b56f"
+></div>
+<!-- END OF RELEVANT PART -->
+
+<div class="related">
+  <h2>관련있는 포스트</h2>
+  <ul class="related-posts">
+    
+    <li>
+      <h3>
+        <a href="/posts/jekyll local server issue">
+          jekyll local server issue
+          <small>22 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/mapVSforeach">
+          map vs foreach
+          <small>21 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/es5_vs_es6">
+          Difference between ES5 and ES6
+          <small>17 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/closure">
+          closure
+          <small>12 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/javascript_interview_2">
+          javascript interview 2
+          <small>11 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector(".sidebar-toggle");
+        var sidebar = document.querySelector("#sidebar");
+        var checkbox = document.querySelector("#sidebar-checkbox");
+
+        document.addEventListener(
+          "click",
+          function(e) {
+            var target = e.target;
+
+            if (
+              !checkbox.checked ||
+              sidebar.contains(target) ||
+              (target === checkbox || target === toggle)
+            )
+              return;
+
+            checkbox.checked = false;
+          },
+          false
+        );
+      })(document);
+    </script>
+  </body>
+</html>

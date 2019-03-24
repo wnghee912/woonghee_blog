@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      closure &middot; yngmanie
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- START OF RELEVANT PART -->
+  <script async src="https://just-comments.com/w.js"></script>
+  <!-- END OF RELEVANT PART -->
+
+</head>
+
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <nav class="sidebar-nav">
+    <img
+      src="https://avatars2.githubusercontent.com/u/35208965?s=460&v=4"
+      alt="yngmanie profile image"
+    />
+    <div class="sidebar-item">
+      <p>Front End Dev</p>
+    </div>
+    <a
+      class="sidebar-nav-item"
+      href="/"
+      >Home</a
+    >
+
+                
+    <a
+      class="sidebar-nav-item"
+      href="/archive/"
+      >Archive</a
+    >
+              
+
+    <!-- <a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a> -->
+    <a class="sidebar-nav-item" href="https://github.com/austinpark420"
+      >GitHub</a
+    >
+    <!-- <span class="sidebar-nav-item">Currently v1.0.0</span> -->
+  </nav>
+
+  <!-- <div class="sidebar-item">
+    <p>
+      &copy; 2019. All rights reserved.
+    </p>
+  </div> -->
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h1 class="masthead-title">
+            <a href="/" title="Home">yngmanie</a>
+            <small>블로그</small>
+          </h1>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h2 class="post-title">closure</h2>
+  <span class="post-date">12 Mar 2019</span>
+  <blockquote>
+  <p>해당 포스트는 <a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36">Master the JavaScript Interview: What is a Closure?</a>를 번역한 컨텐츠입니다. 잘못된 부분이 있다면 댓글 부탁드립니다.</p>
+</blockquote>
+
+<blockquote>
+  <p>“마스터 자바스크립트 인터뷰”는 중급이나 고급레벨의 자바스크립트 포지션 면접질문을 위해 만들어진 포스팅입니다. 그리고 필자가 실제 인터뷰에서 자주 사용합니다.</p>
+</blockquote>
+
+<ul>
+  <li>필자는 자바스크립트 인터뷰 질문 시리즈를 런칭합니다. 솔직히, 클로저를 모르면 자바스크립트를 정확히 알고 있다고 할 수 없습니다.
+그렇게 생각 안할 수도 있지만, 복잡한 자바스크립트 어플리케이션이 어떻게 빌드되는지 정확하게 알고 있습니까? 당신이 정말 그것을 알고 있거나 어떻게 어플리케이션 동작하는지 알고 있습니까? 필자는 항상 의구심을 가지고 있습니다. 이 질문에 대답을 모른다면 심각한 상태입니다.
+클로저의 메카니즘 뿐만아니라, 왜 중요하고 클로저 사용 사례에 대해 쉽게 대답을 할 수 있어야 합니다.
+클로저는 객체 데이터 은닉을 위해 빈번하게 사용됩니다. 이벤트 핸들러, 콜백함수, 부분 응용 어플리케이션 ***, 커링 ***, 함수형 프로그래밍 패턴에서 사용합니다.
+지원자가 클로저에대한 개념이나 기술적인 정의에 대해서 아는 것은 중요하지 않습니다. 필자는 그들이 기본적인 메카니즘을 아는지 확인하고 싶어 합니다. 만약 그렇지 않다면 그것은 개발자가 실제 자바스크립트 어플리케이션을 빌드해본 경없이 없다고 간주합니다.</li>
+</ul>
+
+<h3 id="만약-이-질문에-대답을-못한다면-경력이-얼마든지-당신을-주니어-개발자입니다">만약 이 질문에 대답을 못한다면, 경력이 얼마든지 당신을 주니어 개발자입니다!</h3>
+
+<ul>
+  <li>심하다고 생각할 수 있지만 그렇지 않습니다. 필자의 의도는 유능한 면접관은 클로저가 무엇인기 질문할 것이고 잘못된 대답을 한다면 떨어질 것입니다. 혹 운좋게 면접을 통과해도 경력과 관계없이 주니어 개발자로 고용되기때문에 연봉이 낮을 것입니다.</li>
+  <li>클로저에 대한 일반적인 사용법을 준비해야 합니다.</li>
+</ul>
+
+<h2 id="클로저란-무엇인가">클로저란 무엇인가?</h2>
+
+<ul>
+  <li>클로저는 렉시컬 환경을 참조하고 있는 함수들이 합쳐진 집합입니다. 즉, 클로저는 내부함수에서 외부함수의 스코프에 접근할 수 있는 것입니다. 자바스크립에서 클로저는 함수가 생성될 때마다 생성됩니다.
+클로저를 사용하기 위해서 다른 함수안에 함수를 정의하고 노출시켜야 합니다. 노출하기위해서 그것을 리턴하거나 다른 함수에 전달하면 됩니다.
+내부함수는 외부함수가 반환되었더라도 외부함수 스코프 변수에 접근할 수 있습니다.</li>
+</ul>
+
+<h2 id="클로저-사용-예시">클로저 사용 예시</h2>
+
+<ul>
+  <li>클로저는 객체 데이터 은닉시킬떼 주로 사용됩니다. 데이터 은닉은 프로그램 구현이 아니라 인터페이스를 구성하는데 필수적인 요소입니다. 이것은 견고한 소프트웨어를 빌드하는데 중요한 개념입니다. 왜냐하면 구현 디테일은 인터페이스 컨텍트보다 파괴적인 방식으로 변경되기가 쉽습니다.***</li>
+</ul>
+
+<h3 id="프로그램-인터페이스는-구현이-아니다-디자인패턴-재사용-가능한-객체-지향형-소프트웨어의-요소">“프로그램 인터페이스는 구현이 아니다.” 디자인패턴: 재사용 가능한 객체 지향형 소프트웨어의 요소</h3>
+
+<ul>
+  <li>자바스크립트에서 클로저는 데이터 은닉을 할 수 있는 중요한 한 메카니즘입니다. 정보은닉을 위해 클로저를 사용할 떼 감싸여진 변수는 포함된 함수(외부함수) 스코프 내에 있습니다. 그 밖에 스코프에서 특수한 방법을 제외하고 데이터를 참조할 수 없습니다. 자바스크립트에서 클로저 스코프 외부로 노출시키는 방법이 정의되어 있고 예를 들면 다음과 같습니다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getSecret</span> <span class="o">=</span> <span class="nx">secret</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">get</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">secret</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="nx">test</span><span class="p">(</span><span class="s2">"객체 은닉을 위한 클로저"</span><span class="p">,</span> <span class="nx">assert</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">".get()은 클로저에 접근할 수 있습니다."</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">expected</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">getSecret</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">actual</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
+
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">ok</span><span class="p">(</span><span class="nx">secret</span><span class="p">,</span> <span class="s2">"에러"</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">ok</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="s2">"secret var는 예외적인 방법으로 유효합니다."</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">actual</span><span class="p">,</span> <span class="nx">expected</span><span class="p">,</span> <span class="nx">msg</span><span class="p">);</span>
+  <span class="nx">assert</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><a href="https://jsbin.com/gareno/edit?html,js,output">JSBin으로 실행시켜 보세요.</a></p>
+
+<ul>
+  <li>위에 예시를 보면 ‘.get()’메소드는 ‘getSecret()’내부에 선언되었기 때문에 ‘getSecret()’ 변수에 접근할 수 있고, 이를 데이터 은닉 방법으로 사용합니다. 이 경우 파라미터는 ‘secret’입니다.
+객체는 데이터 은닉에 사용하는 유일한 방법이 아닙니다. 클로저 또한 내부 상태에서 변환값에 영향을 주는 stateful 함수를 생성할 때 사용할 수 있습니다.</li>
+</ul>
+
+<blockquote>
+  <p>const secret = msg =&gt; () =&gt; msg;</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Secret - Secret 메세지로 클로저를 생성합니다.</span>
+<span class="c1">// https://gist.github.com/ericelliott/f6a87bc41de31562d0f9</span>
+<span class="c1">// https://jsbin.com/hitusu/edit?html,js,output</span>
+
+<span class="c1">// secret(msg: String) =&gt; getSecret() =&gt; msg: String</span>
+<span class="kd">const</span> <span class="nx">secret</span> <span class="o">=</span> <span class="nx">msg</span> <span class="o">=&gt;</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">msg</span><span class="p">;</span>
+<span class="nx">test</span><span class="p">(</span><span class="s2">"secret"</span><span class="p">,</span> <span class="nx">assert</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">"secret()은 secret을 통과한 함수를 리턴합니다."</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">theSecret</span> <span class="o">=</span> <span class="s2">"클로저는 쉽습니다."</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">mySecret</span> <span class="o">=</span> <span class="nx">secret</span><span class="p">(</span><span class="nx">theSecret</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">actual</span> <span class="o">=</span> <span class="nx">mySecret</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">expected</span> <span class="o">=</span> <span class="nx">theSecret</span><span class="p">;</span>
+
+  <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">actual</span><span class="p">,</span> <span class="nx">expected</span><span class="p">,</span> <span class="nx">msg</span><span class="p">);</span>
+  <span class="nx">assert</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><a href="https://jsbin.com/bazayo/1/edit?html,js,output">JSBin으로 실행시켜 보세요.</a></p>
+
+<ul>
+  <li>
+    <p>함수형 프로그램에서 클로저는 Partial Application과 커링을 위한 빈번하게 사용됩니다. 이런 요구사항은 약간의 정의가 필요합니다.</p>
+  </li>
+  <li>
+    <p><em>Application</em>: arguments를 값을 리턴하기 위해 함수를 적용하는 프로세스입니다.</p>
+  </li>
+  <li>
+    <p><em>Partial Application</em>: arguments로 함수를 적용하는 프로세스입니다. 부분적으로 적용된 함수는 나중에 반환되기위해 사용됩니다. 즉, 여러개의 parameters를 가지고 있고 더 적은 parameters를 반환하는 함수입니다. partial application은 반환된 함수내에서 하나 혹은 그 이상의 arguments를 고정합니다. 그리고 반환된 함수는 함수 어플리케이션을 완성하기 위해 나머지 parameters를 arguments로 사용합니다.</p>
+  </li>
+  <li>
+    <p>partial application은 parameters를 고정하기위해 클로저 스코프 이접을 취하고 있습니다. target function에 부분적으로 arguments를 적용하는 일반함수를 사용할 수 있습니다. 다음과 같은 형태를 가집니다.</p>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">partialApply</span><span class="p">(</span><span class="nx">targetFunction</span><span class="p">:</span> <span class="nb">Function</span><span class="p">,</span> <span class="p">...</span><span class="nx">fixedArgs</span><span class="p">:</span> <span class="nx">Any</span><span class="p">[])</span><span class="o">=&gt;</span> <span class="nx">functionWithFewerParams</span><span class="p">(...</span><span class="nx">remainingArgs</span><span class="p">:</span> <span class="nx">Any</span><span class="p">[])</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>만약 위에 함수를 읽는데 도움이 필요하다면 <a href="https://github.com/ericelliott/rtype#reading-function-signatures">Rtype: Reading Function Signatures</a>를 살펴보세요.</p>
+  </li>
+  <li>
+    <p>그것은 여러개의 arguments를 취할 수 있는 함수이고, 뒤에 있는 arguments는 우리가 부분적으로 적용하기를 원하는 함수입니다. 그리고 나머지 arguments를 가지고 있는 함수를 반환합니다.</p>
+  </li>
+</ul>
+
+<p>아래 예제를 보면 도움이 될 겁니다. 2개의 수를 더하는 함수입니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">add</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>당신은 10과 다른 수를 더하는 함수를 원한다고 가정해 봅시다. 우리는 그것을 ‘add10()’이라고 정합니다. ‘add10(5)’의 결과는 15가 되어야 합니다. 우리의’partialApply()’함수는 아래와 같이 생성합니다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">add10</span> <span class="o">=</span> <span class="nx">partialApply</span><span class="p">(</span><span class="nx">add</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<span class="nx">add10</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>예를 들어, argument 10는 고정된 parameter가 되고 ‘add10()’ 클로져 스코드 안에 기억될 겁니다.</p>
+  </li>
+  <li>
+    <p>‘partialApply()’ 구현을 살펴봅시다.</p>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 일반적인 Partial Application 함수</span>
+<span class="c1">// https://jsbin.com/biyupu/edit?html,js,output</span>
+<span class="c1">// https://gist.github.com/ericelliott/f0a8fd662111ea2f569e</span>
+
+<span class="c1">// partialApply(targetFunction: Function, ...fixedArgs: Any[]) =&gt;</span>
+<span class="c1">//   functionWithFewerParams(...remainingArgs: Any[])</span>
+<span class="kd">const</span> <span class="nx">partialApply</span> <span class="o">=</span> <span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="p">...</span><span class="nx">fixedArgs</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">(...</span><span class="nx">remainingArgs</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">fn</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">fixedArgs</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">remainingArgs</span><span class="p">));</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="nx">test</span><span class="p">(</span><span class="s2">"add10"</span><span class="p">,</span> <span class="nx">assert</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">"partialApply()는 함수에서 부분적용되어야 합니다."</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">add</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">add10</span> <span class="o">=</span> <span class="nx">partialApply</span><span class="p">(</span><span class="nx">add</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">actual</span> <span class="o">=</span> <span class="nx">add10</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">expected</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+
+  <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">actual</span><span class="p">,</span> <span class="nx">expected</span><span class="p">,</span> <span class="nx">msg</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><a href="https://jsbin.com/biyupu/edit?html,js,output">JSBin으로 실행시켜 보세요.</a></p>
+
+<ul>
+  <li>보시다시피,’partialApply()’를 통과한 ‘fixedArgs’ 인수에 접근을 유지하면서 함수를 간단하게 리턴합니다.</li>
+</ul>
+
+</div>
+
+<!-- START OF RELEVANT PART -->
+<div
+  class="just-comments"
+  data-allowguests="true"
+  data-apikey="74990c3f9164c55222e4e73e0c03b56f"
+></div>
+<!-- END OF RELEVANT PART -->
+
+<div class="related">
+  <h2>관련있는 포스트</h2>
+  <ul class="related-posts">
+    
+    <li>
+      <h3>
+        <a href="/posts/jekyll local server issue">
+          jekyll local server issue
+          <small>22 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/mapVSforeach">
+          map vs foreach
+          <small>21 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/es5_vs_es6">
+          Difference between ES5 and ES6
+          <small>17 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/javascript_interview_2">
+          javascript interview 2
+          <small>11 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/javascript_module_systems">
+          javascript module systems
+          <small>04 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector(".sidebar-toggle");
+        var sidebar = document.querySelector("#sidebar");
+        var checkbox = document.querySelector("#sidebar-checkbox");
+
+        document.addEventListener(
+          "click",
+          function(e) {
+            var target = e.target;
+
+            if (
+              !checkbox.checked ||
+              sidebar.contains(target) ||
+              (target === checkbox || target === toggle)
+            )
+              return;
+
+            checkbox.checked = false;
+          },
+          false
+        );
+      })(document);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      block과 line &middot; yngmanie
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- START OF RELEVANT PART -->
+  <script async src="https://just-comments.com/w.js"></script>
+  <!-- END OF RELEVANT PART -->
+
+</head>
+
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <nav class="sidebar-nav">
+    <img
+      src="https://avatars2.githubusercontent.com/u/35208965?s=460&v=4"
+      alt="yngmanie profile image"
+    />
+    <div class="sidebar-item">
+      <p>Front End Dev</p>
+    </div>
+    <a
+      class="sidebar-nav-item"
+      href="/"
+      >Home</a
+    >
+
+                
+    <a
+      class="sidebar-nav-item"
+      href="/archive/"
+      >Archive</a
+    >
+              
+
+    <!-- <a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a> -->
+    <a class="sidebar-nav-item" href="https://github.com/austinpark420"
+      >GitHub</a
+    >
+    <!-- <span class="sidebar-nav-item">Currently v1.0.0</span> -->
+  </nav>
+
+  <!-- <div class="sidebar-item">
+    <p>
+      &copy; 2019. All rights reserved.
+    </p>
+  </div> -->
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h1 class="masthead-title">
+            <a href="/" title="Home">yngmanie</a>
+            <small>블로그</small>
+          </h1>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h2 class="post-title">block과 line</h2>
+  <span class="post-date">28 May 2018</span>
+  <h3 id="block">block</h3>
+<ul>
+  <li>margin collapse 현상
+    <ul>
+      <li>box 안의 block1에게 margin-top을 주게되면 부모로부터 margin-top이 적용되는 것이 아니라, 부모도 같이 margin-top 적용되는 것을 확인할 수 있다. 이는 margin collapse 현상이고, 이를 해결하기위해서 border 값을 적용하면 된다.</li>
+    </ul>
+  </li>
+</ul>
+
+<iframe height="265" scrolling="no" title="blockNinline" src="//codepen.io/austinpark420/embed/RJbrKw/?height=265&amp;theme-id=0&amp;default-tab=css,result&amp;embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="https://codepen.io/austinpark420/pen/RJbrKw/">blockNinline</a> by YongMin Park (<a href="https://codepen.io/austinpark420">@austinpark420</a>) on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+<h3 id="inline">inline</h3>
+<ul>
+  <li>margin-top은 content flow에 영향을 줄 수 있기때문에 적용이 안된다.(margin-bottom도 동일)</li>
+</ul>
+
+<iframe height="265" scrolling="no" title="blockNinline" src="//codepen.io/austinpark420/embed/RJbrKw/?height=265&amp;theme-id=0&amp;default-tab=css,result&amp;embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="https://codepen.io/austinpark420/pen/RJbrKw/">blockNinline</a> by YongMin Park (<a href="https://codepen.io/austinpark420">@austinpark420</a>) on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+<h3 id="block-vs-inline">block VS inline</h3>
+<ul>
+  <li>block의 경우 padding은 context 안쪽으로 여백이 생기고, inline의 경우 context 밖으로 여백이 생긴다.</li>
+</ul>
+<iframe height="265" scrolling="no" title="blockNinline" src="//codepen.io/austinpark420/embed/RJbrKw/?height=265&amp;theme-id=0&amp;default-tab=css,result&amp;embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="https://codepen.io/austinpark420/pen/RJbrKw/">blockNinline</a> by YongMin Park (<a href="https://codepen.io/austinpark420">@austinpark420</a>) on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+
+</div>
+
+<!-- START OF RELEVANT PART -->
+<div
+  class="just-comments"
+  data-allowguests="true"
+  data-apikey="74990c3f9164c55222e4e73e0c03b56f"
+></div>
+<!-- END OF RELEVANT PART -->
+
+<div class="related">
+  <h2>관련있는 포스트</h2>
+  <ul class="related-posts">
+    
+    <li>
+      <h3>
+        <a href="/posts/jekyll local server issue">
+          jekyll local server issue
+          <small>22 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/mapVSforeach">
+          map vs foreach
+          <small>21 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/es5_vs_es6">
+          Difference between ES5 and ES6
+          <small>17 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/closure">
+          closure
+          <small>12 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/javascript_interview_2">
+          javascript interview 2
+          <small>11 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector(".sidebar-toggle");
+        var sidebar = document.querySelector("#sidebar");
+        var checkbox = document.querySelector("#sidebar-checkbox");
+
+        document.addEventListener(
+          "click",
+          function(e) {
+            var target = e.target;
+
+            if (
+              !checkbox.checked ||
+              sidebar.contains(target) ||
+              (target === checkbox || target === toggle)
+            )
+              return;
+
+            checkbox.checked = false;
+          },
+          false
+        );
+      })(document);
+    </script>
+  </body>
+</html>

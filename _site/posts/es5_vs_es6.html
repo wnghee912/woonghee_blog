@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Difference between ES5 and ES6 &middot; yngmanie
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- START OF RELEVANT PART -->
+  <script async src="https://just-comments.com/w.js"></script>
+  <!-- END OF RELEVANT PART -->
+
+</head>
+
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <nav class="sidebar-nav">
+    <img
+      src="https://avatars2.githubusercontent.com/u/35208965?s=460&v=4"
+      alt="yngmanie profile image"
+    />
+    <div class="sidebar-item">
+      <p>Front End Dev</p>
+    </div>
+    <a
+      class="sidebar-nav-item"
+      href="/"
+      >Home</a
+    >
+
+                
+    <a
+      class="sidebar-nav-item"
+      href="/archive/"
+      >Archive</a
+    >
+              
+
+    <!-- <a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a> -->
+    <a class="sidebar-nav-item" href="https://github.com/austinpark420"
+      >GitHub</a
+    >
+    <!-- <span class="sidebar-nav-item">Currently v1.0.0</span> -->
+  </nav>
+
+  <!-- <div class="sidebar-item">
+    <p>
+      &copy; 2019. All rights reserved.
+    </p>
+  </div> -->
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h1 class="masthead-title">
+            <a href="/" title="Home">yngmanie</a>
+            <small>블로그</small>
+          </h1>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h2 class="post-title">Difference between ES5 and ES6</h2>
+  <span class="post-date">17 Mar 2019</span>
+  <blockquote>
+  <p>해당 포스트는 <a href="https://medium.com/@muthuks/difference-between-es-5-and-es-6-e993c7ab0a70">Difference between ES 5 and ES 6</a>를 번역한 컨텐츠입니다. 잘못된 부분이 있다면 댓글 부탁드립니다.</p>
+</blockquote>
+
+<h2 id="템플릿-리터럴">템플릿 리터럴</h2>
+
+<ul>
+  <li>`Rune`을 템플릿 리터럴을 사용함으로써, 특수문자로 감쌀 필요가 없어졌습니다. 또한 템플리 리터럴 ${variable}안에는 변수는 있는 그대로 표현될 수 있습니다.</li>
+</ul>
+
+<h3 id="es5">ES5</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">"용민"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">31</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'저의 이름은 " '</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s1">' "이고, 나이는 '</span> <span class="o">+</span> <span class="nx">age</span> <span class="o">+</span> <span class="s2">"살 입니다."</span><span class="p">);</span>
+<span class="c1">//  저의 이름은 "용민"이고, 나이는 31살 입니다.</span>
+</code></pre></div></div>
+
+<h3 id="es6">ES6</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">"용민"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">31</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`저의 이름은 </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">이고, 나이는 </span><span class="p">${</span><span class="nx">age</span><span class="p">}</span><span class="s2">살 입니다.`</span><span class="p">);</span>
+<span class="c1">//  저의 이름은 "용민"이고, 나이는 31살 입니다.</span>
+</code></pre></div></div>
+
+<h2 id="화살표-함수">화살표 함수</h2>
+
+<ul>
+  <li>
+    <p>ES5에서 함수 선언</p>
+
+    <ul>
+      <li>ES5에서 함수를 선언하는 방법은 3가지가 있습니다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>함수 선언식</p>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">str</span><span class="p">(</span><span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"용민"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>생성자 함수(많이 사용하지 않음)</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="s2">"arg1"</span><span class="p">,</span> <span class="s2">"arg2"</span><span class="p">,</span> <span class="s2">"console.log('용민')"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>함수 리터럴(익명함수를 만들때 사용)</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"용민"</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="화살표함수-선언">화살표함수 선언</h2>
+
+<ul>
+  <li>ES6에서 화살표 함수를 활용해 함수 리터럴 방식을 간단하게 하는것이 가능하다. <em>this</em>는 아래에 함수 리터럴의 <em>this</em>와 다른 것을 유념해야합니다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"용민"</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<ul>
+  <li>화살표 함수는 하나의 argument가 있다면 아래와 같습니다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">arg1</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arg1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>argument에서 ()를 생략할 수 있습니다.( argument가 없다면 생략할 수 없습니다.) 또한 한줄로 표현이 가능하다면 위에 예제와 같이 {}를 생략할 수 있습니다.</p>
+  </li>
+  <li>
+    <p>만약 화살표 함수가 객체를 반환한다면 아래 예제와 같습니다.</p>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">func</span> <span class="o">=&gt;</span> <span class="p">({</span> <span class="na">id</span><span class="p">:</span> <span class="s2">"31"</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<p>()로 눈에 보이는 모든 부분을 감싸야 합니다.</p>
+
+<h2 id="this의-다른-동작">this의 다른 동작</h2>
+
+<ul>
+  <li>(1) 메소드 콜</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">value</span><span class="p">:</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="nl">show</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// 10</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>메소드의 this는 함수를 호출한 객체 자체입니다. 위에 예시에 this.value는 obj.value와 동일 합니다.</p>
+  </li>
+  <li>
+    <p>(2) 함수 콜</p>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">func</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">func</span><span class="p">();</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>위와 같이 일반적인 함수를 호출할 때(함수가 객체 안에서 선언되었을지라도), this는 전역을 가리킵니다.
+이러한 이유로 this.value는 함수안에는 this를 참조하지 않습니다. 그리고 전역에 value는 undefined입니다. 만약 전역에 <em>var value = 1;</em>이 정의되어 있으면 함수 호출값은 1이 나옵니다.</p>
+  </li>
+  <li>
+    <p>(3) 생성자 함수 호출</p>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Obj</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Obj</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// 0</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>생성자함수의 인스턴스의 경우, this는 인스턴스를 가리킵니다.</p>
+  </li>
+  <li>
+    <p>(4) apply, call, bind</p>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">value</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="na">show</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">newObj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">value</span><span class="p">:</span> <span class="mi">5</span>
+<span class="p">};</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span> <span class="c1">//1</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">show</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">newObj</span><span class="p">);</span> <span class="c1">// 5;</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">show</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">newObj</span><span class="p">);</span> <span class="c1">// 5;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>call, apply 메소드를 활용함으로 첫번 째 argument에 this를 바인딩할 수 있습니다. 그것은 newObj={value: 5}이기 때문에 this.value에 값을 5로 바꾸는 것입니다.</p>
+  </li>
+  <li>
+    <p>argument는 두번 째 argument를 전달 받을 수 있습니다. call은 순서대로 받고 apply라는 배열로 전달합니다. 또한 bind 메소드를 사용할 때, 아래와 같이 사용합니다. (this는 바인딩하는 함수를 생성합니다.)</p>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">newFunc</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">show</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">newObj</span><span class="p">);</span>
+<span class="nx">newFunc</span><span class="p">();</span>
+</code></pre></div></div>
+
+<ul>
+  <li>(5) 화살표 함수[ES6 ~]
+화살표함수에서 함수가 선언된 스코프에 자동으로 바인딩 됩니다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">value</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+
+  <span class="c1">// 메소드 호출</span>
+  <span class="na">show</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// 10</span>
+
+    <span class="c1">// 함수 호출</span>
+    <span class="kd">function</span> <span class="nx">show_01</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// undefined</span>
+    <span class="p">}</span>
+    <span class="nx">show_01</span><span class="p">();</span>
+
+    <span class="c1">// 화살표 함수</span>
+    <span class="kd">function</span> <span class="nx">show_02</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// 10</span>
+    <span class="p">}</span>
+    <span class="nx">show_02</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h2 id="변수-선어">변수 선어</h2>
+
+<h3 id="var-let-const">var, let, const</h3>
+
+<ul>
+  <li>
+    <p>ES6에서 var와 새롭게 let, const 문법을 추가적으로 사용할 수 있습니다.</p>
+  </li>
+  <li>let …… unable</li>
+  <li>
+    <p>const는 변수를 다신선언…. 할 수 없고 값을 재할당할 수 없습니다.</p>
+  </li>
+  <li>var는 변수를 선언할 때 사용합니다. 아래와 같이 사용해도 문제가 없습니다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">//15</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">//12</span>
+</code></pre></div></div>
+
+<ul>
+  <li>let은 한번 선언된 변수는 동일한 이름으로 선언할 수 없습니다. (값을 재할당 할 수 있습니다.)</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">//15</span>
+<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span> <span class="c1">// Identifier 'x' has already been declared</span>
+</code></pre></div></div>
+
+<p>또한, const는 constant와 같은 룰을 가지고 있습니다. 그리고 한번 초기화된 변수에 재할당하는 것을 허락하지 않습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 10;</span>
+<span class="nx">x</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span> <span class="c1">// TypeError: Assignment to constant variable.</span>
+</code></pre></div></div>
+
+<p>만약에 const를 객체나 배열타입으로 선언했다면, 참조 자체를 변경할 수 없지만 컨텐츠를 변경할 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">ary1</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">aryFalse</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+  <span class="nx">aryFalse</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">];</span> <span class="c1">//Error</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aryFalse</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">ary1</span><span class="p">();</span> <span class="c1">// Error</span>
+
+<span class="kd">var</span> <span class="nx">ary2</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">aryTure</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+  <span class="nx">aryTure</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aryTrue</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">any2</span><span class="p">();</span> <span class="c1">// [1, 10, 3]</span>
+</code></pre></div></div>
+
+<h2 id="변수의-스코프-범위">변수의 스코프 범위</h2>
+
+<ul>
+  <li>만약에 {, if}블록 안에 let, const를 선언하면 스코프밖에서 안에있는 변수를 참조할 수 없습니다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="c1">// 0</span>
+<span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">j</span><span class="p">);</span> <span class="c1">// ReferenceError</span>
+<span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">k</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">k</span><span class="p">);</span> <span class="c1">// ReferenceError</span>
+</code></pre></div></div>
+
+<ul>
+  <li>변수 let, const 밖에 스포프에서 선언된 변수를 참조할 수 있습니다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">ture</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="c1">// 5</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="모듈">모듈</h2>
+
+<ul>
+  <li>ES5 이전에는 각 기능별로 JS파일은 나누고 개발 및 관리하는 것이 불가능했습니다.</li>
+</ul>
+
+<blockquote>
+  <p>p.s
+<em>var obj = obj || {}</em>는 네이스페이스 패턴을 사용할 수 있는 것처럼 보입니다.</p>
+</blockquote>
+
+<h3 id="require">require</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">js</span> <span class="o">/</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span><span class="nx">script</span><span class="p">.</span><span class="nx">js</span>
+      <span class="o">|</span>
+      <span class="o">---</span>  <span class="nx">slider</span><span class="p">.</span><span class="nx">js</span>
+</code></pre></div></div>
+
+<ul>
+  <li>파일구성의 경우,</li>
+  <li>index.html</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+  <span class="nx">src</span> <span class="o">=</span> <span class="s2">"slider.js"</span><span class="p">;</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+  <span class="nx">src</span> <span class="o">=</span> <span class="s2">"script.js"</span><span class="p">;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>위에 예시는 기존에 사용하던 방식입니다.</p>
+
+<ul>
+  <li>script.js</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">slider</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(.</span><span class="o">/</span><span class="nx">slider</span><span class="p">.</span><span class="nx">js</span><span class="p">)</span>
+<span class="c1">// 혹은 require(./slider)</span>
+</code></pre></div></div>
+
+<p>위와 같이 함으로써, slider.js는 임포트할수 있습니다. 이러한 방법으로 파일 자체를 사용할 수 있습니다.</p>
+
+<blockquote>
+  <p>p.s
+require은 ES5부터 CommonJS 규격으로 존재해 왔습니다. 그러나 브러우저는 여전히 지원하고 있지않습니다.(다른 전환 프로세스를 이용해야 합니다.)</p>
+</blockquote>
+
+<h3 id="import--export">import / export</h3>
+
+<ul>
+  <li>모듈은 실현가능한 특정프로그램의 그룹입니다. 그리고 이것은 다른 파일의 변수, 함수를 참조합니다. 클래스와 같은 모듈이 로딩될 때, import와 export를 이용해 사용될 수 있습니다.</li>
+</ul>
+
+<h3 id="하나의-모듈만-공유할때">하나의 모듈만 공유할때</h3>
+
+<ul>
+  <li>
+    <p>로드 모듈</p>
+
+    <blockquote>
+      <p>import ‘import to loadname’ from ‘파일 경로’</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>아웃풋 모듈</p>
+
+    <blockquote>
+      <p>export default ‘module’</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>script.js</p>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Carousel</span> <span class="k">from</span> <span class="s2">"./carousel"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">carousel</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Carousel</span><span class="p">();</span>
+</code></pre></div></div>
+
+<ul>
+  <li>carousel.js</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">Carousel</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">calc</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="nx">calc</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="여러-모듈을-사용할-때">여러 모듈을 사용할 때</h3>
+
+<ul>
+  <li>아웃풋 관점에서, export는 사용하고 싶은 곳에 붙이고, import는 다음과 같이 사용하면 됩니다.
+    <blockquote>
+      <p>import {a1, a2, …} from ‘파일 경로’</p>
+    </blockquote>
+  </li>
+  <li>script.js</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">multi</span><span class="p">,</span> <span class="nx">SuperMulti</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"./Multiplay"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multi</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span> <span class="c1">// 50</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">SuperMulti</span><span class="p">(</span><span class="mi">6</span><span class="p">));</span> <span class="c1">// 600</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">multi</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">i</span> <span class="o">*</span> <span class="nx">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">superMulti</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">i</span> <span class="o">*</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>만약 모든 모듈은 전달받기위해서는 import사이드는 아래와 같이 작성하면 됩니다.
+    <blockquote>
+      <p>import * as ‘object name’ form ‘파일 경로’</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>위의 예제를 아래와 같이 작성하면 됩니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">lib</span> <span class="k">from</span> <span class="s2">"./multiply"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lib</span><span class="p">.</span><span class="nx">multi</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span> <span class="c1">// 50</span>
+</code></pre></div></div>
+
+<h2 id="클래스">클래스</h2>
+
+<h3 id="클래스-선언">클래스 선언</h3>
+
+<p>ES5에서 클래스 선언은 프로토타입을 통해서 실현됐습니다. ES6에서는 class 키워드를 사용해서 선언할 수 있습니다.</p>
+
+<ul>
+  <li>ES5</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">=</span> <span class="nx">arg1</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">arg2</span> <span class="o">=</span> <span class="nx">arg2</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">Add</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">calc</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">+</span> <span class="s2">"+"</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">arg2</span> <span class="o">+</span> <span class="s2">"="</span> <span class="o">+</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">arg2</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">num</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">.</span><span class="nx">calc</span><span class="p">());</span> <span class="c1">// 5 + 8 = 13</span>
+</code></pre></div></div>
+
+<ul>
+  <li>ES6</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Add</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">=</span> <span class="nx">arg1</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">arg2</span> <span class="o">=</span> <span class="nx">arg2</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">calc</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">+</span> <span class="s2">"+"</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">arg2</span> <span class="o">+</span> <span class="s2">"="</span> <span class="o">+</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">arg2</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">num</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">.</span><span class="nx">calc</span><span class="p">());</span> <span class="c1">// 5 + 8 = 13</span>
+</code></pre></div></div>
+
+<h3 id="클래스-상속">클래스 상속</h3>
+
+<ul>
+  <li>
+    <p>클래스 상속과 오버라이딩은 super을 사용해서 수행할 수 있습니다.</p>
+  </li>
+  <li>
+    <p>ES5 (Add는 이미 선언되었다고 가정)</p>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">AddSquare</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">Add</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">AddSquare</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="nx">Add</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
+
+<span class="nx">AddSquare</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">calc</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 메소드는 생략될 수 없습니다.</span>
+    <span class="nx">Add</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">calc</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="na">calcSquare</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">pow</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">arg2</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">return</span> <span class="s2">"("</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">+</span> <span class="s2">"+"</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">arg2</span> <span class="o">+</span> <span class="s2">")^2="</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">pow</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">numSquare</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AddSquare</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numSquare</span><span class="p">.</span><span class="nx">calc</span><span class="p">());</span> <span class="c1">// 5 + 8 = 13</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numSquare</span><span class="p">.</span><span class="nx">calcSquare</span><span class="p">());</span> <span class="c1">// (5 + 8) ^ 2 =169</span>
+</code></pre></div></div>
+
+<ul>
+  <li>ES6 (Add 클래스는 이미 선언되었다고 가정)</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">AddSquare</span> <span class="kd">extends</span> <span class="nx">Add</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">calc</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">.</span><span class="nx">calc</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="nx">calcSquare</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">pow</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">arg2</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">return</span> <span class="s2">"("</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">+</span> <span class="s2">"+"</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">arg2</span> <span class="o">+</span> <span class="s2">") ^ 2 ="</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">pow</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">numSquare</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AddSquare</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numSquare</span><span class="p">.</span><span class="nx">calc</span><span class="p">());</span> <span class="c1">// 5 + 8 = 13</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numSquare</span><span class="p">.</span><span class="nx">calcSquare</span><span class="p">());</span> <span class="c1">// (5 + 8) ^ 2 = 169</span>
+</code></pre></div></div>
+
+</div>
+
+<!-- START OF RELEVANT PART -->
+<div
+  class="just-comments"
+  data-allowguests="true"
+  data-apikey="74990c3f9164c55222e4e73e0c03b56f"
+></div>
+<!-- END OF RELEVANT PART -->
+
+<div class="related">
+  <h2>관련있는 포스트</h2>
+  <ul class="related-posts">
+    
+    <li>
+      <h3>
+        <a href="/posts/jekyll local server issue">
+          jekyll local server issue
+          <small>22 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/mapVSforeach">
+          map vs foreach
+          <small>21 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/closure">
+          closure
+          <small>12 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/javascript_interview_2">
+          javascript interview 2
+          <small>11 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/javascript_module_systems">
+          javascript module systems
+          <small>04 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector(".sidebar-toggle");
+        var sidebar = document.querySelector("#sidebar");
+        var checkbox = document.querySelector("#sidebar-checkbox");
+
+        document.addEventListener(
+          "click",
+          function(e) {
+            var target = e.target;
+
+            if (
+              !checkbox.checked ||
+              sidebar.contains(target) ||
+              (target === checkbox || target === toggle)
+            )
+              return;
+
+            checkbox.checked = false;
+          },
+          false
+        );
+      })(document);
+    </script>
+  </body>
+</html>

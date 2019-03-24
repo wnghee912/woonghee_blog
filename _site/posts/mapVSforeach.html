@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      map vs foreach &middot; yngmanie
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- START OF RELEVANT PART -->
+  <script async src="https://just-comments.com/w.js"></script>
+  <!-- END OF RELEVANT PART -->
+
+</head>
+
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <nav class="sidebar-nav">
+    <img
+      src="https://avatars2.githubusercontent.com/u/35208965?s=460&v=4"
+      alt="yngmanie profile image"
+    />
+    <div class="sidebar-item">
+      <p>Front End Dev</p>
+    </div>
+    <a
+      class="sidebar-nav-item"
+      href="/"
+      >Home</a
+    >
+
+                
+    <a
+      class="sidebar-nav-item"
+      href="/archive/"
+      >Archive</a
+    >
+              
+
+    <!-- <a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a> -->
+    <a class="sidebar-nav-item" href="https://github.com/austinpark420"
+      >GitHub</a
+    >
+    <!-- <span class="sidebar-nav-item">Currently v1.0.0</span> -->
+  </nav>
+
+  <!-- <div class="sidebar-item">
+    <p>
+      &copy; 2019. All rights reserved.
+    </p>
+  </div> -->
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h1 class="masthead-title">
+            <a href="/" title="Home">yngmanie</a>
+            <small>블로그</small>
+          </h1>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h2 class="post-title">map vs foreach</h2>
+  <span class="post-date">21 Mar 2019</span>
+  <blockquote>
+  <p>해당 포스트는 <a href="https://codeburst.io/javascript-map-vs-foreach-f38111822c0f">JavaScript — Map vs. ForEach</a>를 참고하여 작성하였습니다. 잘못된 부분이 있다면 댓글 부탁드립니다.</p>
+</blockquote>
+
+<blockquote>
+  <p>자바스크립트를 좀 더 깊게 배우고 싶다면? <a href="https://codeburst.io/javascript-understanding-the-weird-parts-d1d0e7061ebf">JavaScript — Understanding the Weird Parts</a></p>
+</blockquote>
+
+<ul>
+  <li>만약 자바스크립트를 사용한지 얼마되지 않았다면, 비슷한 2개의 자바스크립트 메소드를 보았을겁니다: Arrary.prototype.map()과 Arrary.prototype.forEach().</li>
+</ul>
+
+<h3 id="무엇이-다를까요">무엇이 다를까요?</h3>
+
+<h2 id="map--foreach-정의">Map &amp; ForEach 정의</h2>
+
+<p>우선 MDN의 정의를 살펴봅시다.</p>
+
+<ul>
+  <li>forEach(): Arrary 요소를 제공된 함수로 한 번 실행합니다.</li>
+  <li>map(): 모든 Arrary 요소가 제공된 함수로 호출될때 새로운 arrary를 생성합니다.</li>
+</ul>
+
+<p>위에 정의는 정확히 무슨 의미일까요?</p>
+
+<p>forEach() 메소드는 아무것도 리턴하지 않습니다(undefined). 단지 제공된 함수로 Arrary 요소를 호출합니다. 이 콜백은 호출하는 Arrary를 변경할 수 있습니다.</p>
+
+<p>한편, map() 메소드는 Arrary안에 요소들을 호출합니다. forEach()와 다른점은 값을 사용하고 Arrary와 동일한 사이즈의 새로운 Arrary을 반환합니다.</p>
+
+<h3 id="예시">예시</h3>
+
+<p>아래의 Arrary에서 만약 각 요소를 2배로 올리고 싶다면 map과 forEach 모두 사용할 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p><em>forEach:</em>
+forEach 메소드 안에서 아무것도 반환하지 않고 리턴 값은 버려집니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">arr</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">num</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="o">=</span> <span class="nx">num</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// 결과</span>
+<span class="c1">// arr = [2, 4, 6, 8, 10]</span>
+</code></pre></div></div>
+
+<p><em>Map:</em></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="kr">double</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">num</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">num</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="c1">// 결과</span>
+<span class="c1">// doubled = [2, 4, 6, 8, 10]</span>
+</code></pre></div></div>
+
+<h2 id="속도-측정">속도 측정</h2>
+
+<p><a href="https://jsperf.com/">JsPerf는 javascirpt 메소드와 함수 속도차이를 측정하는 좋은 사이트입니다.</a></p>
+
+<p>forEach() 와 Map()을 테스트한 결과가 아래 이미지 입니다.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*aVOlJ0l02ymgVrQ8axIBrQ.png" alt="forEach() 와 Map()을 테스트한 결과" /></p>
+
+<p>보시다시피, 필자 컴퓨터에서 forEach()가 map()보다 70%가 속도가 느립니다. 여러분의 브라우저에서 약간 다를수도 있습니다.</p>
+
+<p><a href="https://jsperf.com/map-vs-foreach-speed-test">Map vs ForEach jsPerf</a></p>
+
+<h2 id="기능-측정">기능 측정</h2>
+
+<p>함수형프로그램을 선호한다면 map()을 사용하는 것이 더 바람직하다는 것을 이해하는 것이 중요합니다.</p>
+
+<p>forEach() 기존의 Ararry를 변경하기 때문입니다. 반면, map()은 새로운 Ararry를 반환합니다.그러므로 기존의 배열을 변경하지 않습니다.</p>
+
+<h2 id="무엇이-더-좋을까요">무엇이 더 좋을까요?</h2>
+
+<p>그것은 상황에 따라 달라집니다.</p>
+
+<p>forEach()는 당신의 Arrary안에 데이터를 변경하려는 것이 아니라 데이터베이스에 저장하거나 로그아웃하는 것과 같은 작업에 유용할 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">,</span> <span class="s2">"d"</span><span class="p">];</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">letter</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">letter</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// a</span>
+<span class="c1">// b</span>
+<span class="c1">// c</span>
+<span class="c1">// d</span>
+</code></pre></div></div>
+
+<p>map()은 데이터를 변경하거할 때 선호될 수 있습니다. 더 빠를 뿐 아니라 새로운 배열을 반환합니다. 이는 다른 메소들과 함께 사용하는 것 같이 멋진 일을 할 수 있다는 것을 의미합니다.(map(), filter(), reduce() 등)</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">num</span> <span class="o">=&gt;</span> <span class="nx">num</span> <span class="o">*</span> <span class="mi">2</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="nx">num</span> <span class="o">=&gt;</span> <span class="nx">num</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">);</span>
+
+<span class="c1">// arr2 = [6, 8, 10]</span>
+</code></pre></div></div>
+
+<p>위에 우리가 했던 일들은 처음에 arr을 맵핑을하고 모든 요소를 곱하는 것입니다. 이 후 우리는 arrary를 통해 필터링을 하고 5보다 큰 요소만 저장했습니다. 이것은 arr2 = [6, 8, 10]으로 만들었습니다.</p>
+
+<p>만약 map, reduce, filter에 대해서 더 알고 싶다. 해당 article을 참고 부탁드립니다:<a href="https://codeburst.io/javascript-learn-to-chain-map-filter-and-reduce-acd2d0562cd4">JavaScript — Learn to Chain Map, Filter, and Reduce.</a></p>
+
+<h2 id="key-point">key point</h2>
+
+<ul>
+  <li>forEach()으로 할 수 있는 것은 map()으로도 가능하고 그 반대도 가능합니다.</li>
+  <li>map()은 메모리를 할당하고 리턴 값을 저장합니다. forEach()는 리턴 값을 버리고 항상 undefined를 리턴합니다.</li>
+  <li>forEach()는 콜백함수로 현재 Arrary를 변환할 수 있습니다. 대신에 map()은 새로운 Arrary를 리턴합니다.</li>
+</ul>
+
+</div>
+
+<!-- START OF RELEVANT PART -->
+<div
+  class="just-comments"
+  data-allowguests="true"
+  data-apikey="74990c3f9164c55222e4e73e0c03b56f"
+></div>
+<!-- END OF RELEVANT PART -->
+
+<div class="related">
+  <h2>관련있는 포스트</h2>
+  <ul class="related-posts">
+    
+    <li>
+      <h3>
+        <a href="/posts/jekyll local server issue">
+          jekyll local server issue
+          <small>22 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/es5_vs_es6">
+          Difference between ES5 and ES6
+          <small>17 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/closure">
+          closure
+          <small>12 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/javascript_interview_2">
+          javascript interview 2
+          <small>11 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/javascript_module_systems">
+          javascript module systems
+          <small>04 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector(".sidebar-toggle");
+        var sidebar = document.querySelector("#sidebar");
+        var checkbox = document.querySelector("#sidebar-checkbox");
+
+        document.addEventListener(
+          "click",
+          function(e) {
+            var target = e.target;
+
+            if (
+              !checkbox.checked ||
+              sidebar.contains(target) ||
+              (target === checkbox || target === toggle)
+            )
+              return;
+
+            checkbox.checked = false;
+          },
+          false
+        );
+      })(document);
+    </script>
+  </body>
+</html>

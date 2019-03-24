@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      html, css 노트 &middot; yngmanie
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- START OF RELEVANT PART -->
+  <script async src="https://just-comments.com/w.js"></script>
+  <!-- END OF RELEVANT PART -->
+
+</head>
+
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <nav class="sidebar-nav">
+    <img
+      src="https://avatars2.githubusercontent.com/u/35208965?s=460&v=4"
+      alt="yngmanie profile image"
+    />
+    <div class="sidebar-item">
+      <p>Front End Dev</p>
+    </div>
+    <a
+      class="sidebar-nav-item"
+      href="/"
+      >Home</a
+    >
+
+                
+    <a
+      class="sidebar-nav-item"
+      href="/archive/"
+      >Archive</a
+    >
+              
+
+    <!-- <a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a> -->
+    <a class="sidebar-nav-item" href="https://github.com/austinpark420"
+      >GitHub</a
+    >
+    <!-- <span class="sidebar-nav-item">Currently v1.0.0</span> -->
+  </nav>
+
+  <!-- <div class="sidebar-item">
+    <p>
+      &copy; 2019. All rights reserved.
+    </p>
+  </div> -->
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h1 class="masthead-title">
+            <a href="/" title="Home">yngmanie</a>
+            <small>블로그</small>
+          </h1>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h2 class="post-title">html, css 노트</h2>
+  <span class="post-date">16 May 2018</span>
+  <h2 id="html5">HTML5</h2>
+<ul>
+  <li>컨텐츠 모델이란?
+    <ul>
+      <li>기존 block과 line만으로 컨텐츠를 그룹화하는 것을 보다 명확하게 하기위해 비슷한 카테고리를 그룹화한 것을 컨텐츠 모델이라고 한다.</li>
+    </ul>
+  </li>
+  <li>아웃라인 알고리즘: html5 이전에는 h태그가 아웃라인을 형성했지만 HTML5 도입된 후에는 section, article, nav, aside 태그도 아웃라인을 결정짓는 태그로 추가되었다.</li>
+  <li>마크업: 컨텐츠에 의미를 부여하는 것
+    <ul>
+      <li>논리적인 순서 ( 눈에 보이는 것이 아니라 컨텐츠를 논리적으로 )</li>
+      <li>의미에 맞는 마크업</li>
+      <li>네이밍 (class or id)</li>
+    </ul>
+  </li>
+  <li>tab키를 눌렀을 때 포인터를 받을 수 있는 방법
+    <ul>
+      <li>a[href], area[href], form, tab index 속성을 가지고 있을때</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="defer">defer</h4>
+<ul>
+  <li>브라우져가 html을 파싱하면서 script태그를 만나면 html 파싱과 함께 scr 태그를 다운받는 것을 동시에 진행한다.</li>
+  <li>html5에서 처음 도입됨.</li>
+</ul>
+
+<h4 id="article">article</h4>
+<ul>
+  <li>rss가 가능한 독립적인 아웃라인 영역</li>
+</ul>
+
+<h4 id="figure">figure</h4>
+<ul>
+  <li>이미지와 이미지를 설명하는 간단한 내용을 담은 태그</li>
+  <li>img, figcaption.</li>
+</ul>
+
+<h4 id="fieldset">fieldset</h4>
+<ul>
+  <li>form안의 묶은 정보를 action으로 전송할 때 사용하는 태크</li>
+</ul>
+
+<h4 id="small">small</h4>
+<ul>
+  <li>작은 단위의 정보를 표현하기위한 태그로 사용하지만 copyright와 같은 정보를 담을 때도 사용한다.
+    <h2 id="css">CSS</h2>
+    <h3 id="cascading">cascading</h3>
+    <ol>
+      <li>중요도</li>
+      <li>점수</li>
+      <li>나중에 선언된 태그</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="property-특징">property 특징</h3>
+<h4 id="margin">margin</h4>
+<ul>
+  <li>normal flow일 때만 적용된다
+    <ul>
+      <li>normal flow란? 마크업 순서의 흐름, 위에서 아래</li>
+      <li>normal flow가 벗어나는 경우: flot</li>
+    </ul>
+  </li>
+  <li>음수 값을 사용할 수 있음 (padding 값은 음수 값 사용 X)</li>
+</ul>
+
+<h4 id="float">float</h4>
+<ul>
+  <li>value: left, right</li>
+  <li>레이아웃 모델</li>
+  <li>부모의 크기만큼 line box가 생성되 그 부분에 띄어진다.</li>
+  <li>내부가 block가 된다.</li>
+  <li>content 크기만큼 width 값을 가진다. (width 값을 가질 수 있음)</li>
+  <li>block 성격을 가지는 태그 위에 떠있지만 inline 속성을 가진 태그는 밀어낸다.</li>
+  <li>보모가 flot이면 자식에게 inherit 된다.</li>
+  <li>동작원리: 워드 파일에 그림은 띄우고 글자는 그림을 감싸 흐르게 하는 것.</li>
+</ul>
+
+<h4 id="clear">clear</h4>
+<ul>
+  <li>value: both, right, left</li>
+  <li>flot가 normal flow의 block 범위를 침범하는 경우, 침범하는 높이만큼 margin값을 주는 것.</li>
+  <li><code class="highlighter-rouge">block 속성</code>에서만 사용할 수 있다.</li>
+</ul>
+
+<h4 id="overflow">overflow</h4>
+<ul>
+  <li>value: scroll, hidden, auto, visible</li>
+  <li>대부분, flot을 포함하는 부모에서 사용한다.</li>
+  <li>hidden의 경우,  부모에게 자식이 가지는 가로,높이만큼 block 영역을 생성한다.</li>
+  <li>자식이 flot되면서 부모가 높이값을 잃어버리는 현상을 해결하는 방법
+    <ul>
+      <li>부모 overflow: hidden</li>
+      <li>flot이 적용된 태크 밑에 의미없는 div 태그 삽입, css에 clear: both</li>
+      <li>부모에 flot 속성 적용</li>
+      <li>::befor, ::after 사용</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="displayproperty-flex">display(property: flex)</h4>
+<ul>
+  <li>정렬하려는 아이템의 부모에게 스타일링을 해야함.</li>
+  <li>레이아웃 모델</li>
+  <li>flex-direction: row, column</li>
+  <li>flex-wrap: nowrap, wra, wrap-reverse</li>
+  <li>Justify-content: space-evenly
+    <h4 id="displayproperty-inline-block">display(property: inline-block)</h4>
+  </li>
+  <li>보이는 것은 inline, 성격은 block</li>
+</ul>
+
+<h4 id="인라인에서는-padding이-text밖으로-적용되고-블록은-text안쪽-영역에-적용된다">인라인에서는 padding이 text밖으로 적용되고, 블록은 text안쪽 영역에 적용된다.</h4>
+
+<h4 id="배치관련-속성은-자식에게-상속안되지만-데코레이션관련-속성은-상속된다">배치관련 속성은 자식에게 상속안되지만, 데코레이션관련 속성은 상속된다.</h4>
+
+<h4 id="css-전처리-언어">css 전처리 언어</h4>
+<ul>
+  <li>sass</li>
+  <li>Less</li>
+</ul>
+
+<h4 id="border-collapse">border-collapse</h4>
+<ul>
+  <li>value:  separate, collapse</li>
+  <li>collapse일 때, 중첩되는 라인에 중복되는 border값을 없앤다.</li>
+</ul>
+
+<h4 id="position">position</h4>
+<h5 id="value-absolute">value: absolute</h5>
+<ul>
+  <li>flot과 가장 큰 차이점은 inline 속성을 떠있는 부분 밖으로 밀어내지 않는다.</li>
+  <li>본인이 있던 자리에서 뜬다.</li>
+  <li>offset
+    <ul>
+      <li>특정 기준점으로 배치를 사용할 때 사용하는 css 개념.</li>
+      <li>absolute의 offset 기준: 부모의 position이 static이 아닐 때</li>
+      <li>property: top, right, left, bottom</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="relative">relative</h5>
+<ul>
+  <li>offset
+    <ul>
+      <li>relative의 offset 기준: normal flow, 자기자신</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="display-inline">display (inline)</h4>
+<ul>
+  <li>padding 값이 중첩된다.</li>
+</ul>
+
+<h4 id="text-align">text-align</h4>
+<ul>
+  <li>value: justify, left, right, center</li>
+  <li>정렬하려는 아이템 부모에게 적용.</li>
+</ul>
+
+<h4 id="flot-relative-동시에-사용이-가능하다">flot, relative 동시에 사용이 가능하다</h4>
+
+<h4 id="clip">clip</h4>
+<ul>
+  <li>value: rect(0, 0, 0, 0);
+    <ul>
+      <li>사각형으로 짤라 준다는 것</li>
+    </ul>
+  </li>
+  <li>position: absolute 일때만 사용 가능</li>
+  <li>항상 출발은 top, left 기준이다.</li>
+</ul>
+
+<h4 id="outline">outline</h4>
+<ul>
+  <li>배경 밖으로 선을 그려준다.</li>
+  <li>실제 box-sizing에 영향을 주지는 않는다.</li>
+</ul>
+
+<h4 id="outline-offset">outline-offset</h4>
+<ul>
+  <li>value: px
+    <h4 id="position-1">position</h4>
+  </li>
+  <li>퍼센트(%) 적용 방법: 배경과 이미지의 % 좌표를 매칭시켜서 보여준다.</li>
+</ul>
+
+<h4 id="background-attachment">background-attachment</h4>
+<ul>
+  <li>value: fixed (배경 고정)</li>
+</ul>
+
+<h4 id="background-img">background-img</h4>
+<ul>
+  <li>value: linear-gradient(to bottom, red, green 30%, blue 100%)</li>
+  <li>value: repeating-linear-gradient</li>
+</ul>
+
+<h4 id="z-index">z-index</h4>
+<ul>
+  <li>먼저 마크업이 먼저 되어 있는 경우, 레이어가 아랫 쪽으로 쌓인다.</li>
+</ul>
+
+<h4 id="line-height">line-height</h4>
+<ul>
+  <li>line-height - font-szie / 2 = half-reading(자간)</li>
+</ul>
+
+<h4 id="white-space">white-space</h4>
+<ul>
+  <li>value: no-wrap (부모 너비 값을 넘어도 줄바꿈이 안일어남)</li>
+  <li>block 성격에만 사용 가능</li>
+</ul>
+
+<h4 id="keyframes">keyframes</h4>
+<ul>
+  <li>사용법</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">@keyframes</span> <span class="n">animationName</span> <span class="p">{</span>
+  <span class="nt">0</span><span class="o">%</span> <span class="p">{}</span>
+  <span class="nt">100</span><span class="o">%</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+<h4 id="애니메이션-keyframes를-사용하기-위한-필수조건">애니메이션 keyframes를 사용하기 위한 필수조건.</h4>
+<ul>
+  <li>animation-name</li>
+  <li>animation-duration</li>
+  <li>cf. animation-fill-mode: forwards 를 활용하면 100%에서 0% 이동</li>
+  <li>cf. animation-iteration-count</li>
+</ul>
+
+<h4 id="transform">transform</h4>
+
+<h4 id="important">!important</h4>
+<ul>
+  <li>value에 직접 주는 것이다.</li>
+</ul>
+
+<h4 id="text-overflow">text-overflow</h4>
+<ul>
+  <li>value: ellipsis</li>
+  <li>말줌임표가 생김.</li>
+</ul>
+
+<h4 id="width">width</h4>
+<ul>
+  <li>width: calc(100% - 000px)</li>
+  <li>반응형에서 많이 사용함.</li>
+</ul>
+
+<h4 id="grid">grid</h4>
+<ul>
+  <li>display가 grid일 때만 사용 가능
+    <ul>
+      <li>부모
+        <ul>
+          <li>grid-template-columns</li>
+          <li>grid-template-rows</li>
+          <li>grid-column-gap</li>
+          <li>grid-template-areas</li>
+        </ul>
+      </li>
+      <li>자식
+        <ul>
+          <li>grid-row: 시작번호/끝나는번호</li>
+          <li>grid-column: 시작번호/끝나는번호</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="word-break">word-break</h4>
+<ul>
+  <li>value: keep-all (공백단위로 줄바꿈) / break-all (width보다 넘치면 줄바꿈)</li>
+</ul>
+
+<h4 id="img-sprite-기법">img sprite 기법</h4>
+<ul>
+  <li>배경의 위치를 바꾸기</li>
+  <li>backgrond-position: x축, y축</li>
+</ul>
+
+<h4 id="transform-1">transform</h4>
+<ul>
+  <li>value: translate(%)</li>
+  <li>background-image를 %로 조절할 때, 원하는 방향으로 배치되지 않을 때 사용하면 좋다.</li>
+</ul>
+
+<h4 id="stiky">stiky</h4>
+<ul>
+  <li>top 좌표를 만나기 전에는 relative처럼
+​</li>
+</ul>
+
+</div>
+
+<!-- START OF RELEVANT PART -->
+<div
+  class="just-comments"
+  data-allowguests="true"
+  data-apikey="74990c3f9164c55222e4e73e0c03b56f"
+></div>
+<!-- END OF RELEVANT PART -->
+
+<div class="related">
+  <h2>관련있는 포스트</h2>
+  <ul class="related-posts">
+    
+    <li>
+      <h3>
+        <a href="/posts/jekyll local server issue">
+          jekyll local server issue
+          <small>22 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/mapVSforeach">
+          map vs foreach
+          <small>21 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/es5_vs_es6">
+          Difference between ES5 and ES6
+          <small>17 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/closure">
+          closure
+          <small>12 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+    <li>
+      <h3>
+        <a href="/posts/javascript_interview_2">
+          javascript interview 2
+          <small>11 Mar 2019</small>
+        </a>
+      </h3>
+    </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector(".sidebar-toggle");
+        var sidebar = document.querySelector("#sidebar");
+        var checkbox = document.querySelector("#sidebar-checkbox");
+
+        document.addEventListener(
+          "click",
+          function(e) {
+            var target = e.target;
+
+            if (
+              !checkbox.checked ||
+              sidebar.contains(target) ||
+              (target === checkbox || target === toggle)
+            )
+              return;
+
+            checkbox.checked = false;
+          },
+          false
+        );
+      })(document);
+    </script>
+  </body>
+</html>
