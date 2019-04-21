@@ -6,7 +6,7 @@ title: yngmanie
 tagline: 블로그
 description: 프론트엔드 개발자 박용민입니다.
 url: https://wnghee912.github.io/woonghee_blog
-baseurl: ""
+baseurl: https://wnghee912.github.io/woonghee_blog
 paginate: 10
 
 # About/contact
